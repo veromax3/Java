@@ -28,7 +28,31 @@ public class homework1 {
         System.out.println("The factorial from " + num2 + " is: " + factorial);
 
 
+        // Задача 3. Реализовать простой калькулятор
+        System.out.printf("Input the 1st number: ");
+        int number1 = iScanner.nextInt();
+        System.out.printf("Input the 2nd number: ");
+        int number2 = iScanner.nextInt();
+        System.out.printf("Input the sign : ");
+        char sign = iScanner.next().charAt(0);
+        if (sign == '+'){
+            int result1 = number1 + number2;
+            System.out.printf("Result of operation " + number1 + sign + number2 + " = " + result1);
+        }
+        if (sign == '-'){
+            int result2 = number1 - number2;
+            System.out.printf("Result of operation " + number1 + sign + number2 + " = " + result2);
+        }
+        if (sign == '*'){
+            int result3 = number1 * number2;
+            System.out.printf("Result of operation " + number1 + sign + number2 + " = " + result3);
+        }
+        if (sign == '/'){
+            int result4 = number1 / number2;
+            System.out.printf("Result of operation " + number1 + sign + number2 + " = " + result4);
+        }
 
+        iScanner.close();
 
             }
         }
