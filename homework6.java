@@ -72,29 +72,28 @@ public class homework6 {
         while(select != 0){
 
             if (select == 1){
-                System.out.printf("Choose the RAM (8, 16, 32): ");
+                System.out.printf("Choose the minimum number of RAM gigabytes (8, 16, 32): ");
                 Integer featureRAM = sc.nextInt();
                 for(String i: RAMMap.keySet()){
-                    if (RAMMap.get(i).equals(featureRAM)){
-                        System.out.println("We have " + i + " with " + featureRAM + " RAM");
+                    if (RAMMap.get(i).equals(featureRAM)|| RAMMap.get(i) > featureRAM ){
+                        System.out.println("We have " + i + " with " + RAMMap.get(i) + " gigabytes of RAM");
                     }
                 }
             }
 
             if (select == 2){
-                System.out.printf("Choose the HDD/SSD (250, 256, 500, 512, 1000): ");
+                System.out.printf("Choose the minimum number of HDD/SSD gigabytes(250, 256, 500, 512, 1000): ");
                 Integer featureHDD_SSD = sc.nextInt();
                 for(String i: HDD_SSDMap.keySet()){
-                    if (HDD_SSDMap.get(i).equals(featureHDD_SSD)){
-                        System.out.println("We have " + i + " with " + featureHDD_SSD + " HHD/SSD");
+                    if (HDD_SSDMap.get(i).equals(featureHDD_SSD) || HDD_SSDMap.get(i) > featureHDD_SSD){
+                        System.out.println("We have " + i + " with " + HDD_SSDMap.get(i) + " gigabytes of HHD/SSD");
                     }
                 }
             }
 
-
             if (select == 3){
                 System.out.printf("Choose the OS (MS Windows, MacOS, Linux): ");
-                String featureOS = sc.nextLine();
+                String featureOS = sc.next();
                 for(String i: OSMap.keySet()){
                     if (OSMap.get(i).equals(featureOS)){
                         System.out.println("We have " + i + " with " + featureOS + " operation system");
@@ -104,21 +103,21 @@ public class homework6 {
             
             if (select == 4){
                 System.out.printf("Choose the colour(white, black, grey): ");
-                String featureColour = sc.nextLine();
+                String featureColour = sc.next();
                 for(String i: colourMap.keySet()){
                     if (colourMap.get(i).equals(featureColour)){
                         System.out.println("We have " + featureColour + " " + i);
                     }
-                    else{
-                        System.out.println("We don't have it, please try again");
-                    }
-                }
+                } 
             }
+            
+                
             
         System.out.println("Choose RAM - 1, HDD or SSD - 2, OS - 3, colour - 4, exit - 0");
         select = sc.nextInt();
         }
-        System.out.println("Goodbye!");
         
+        System.out.println("Goodbye!");
+    sc.close();
     }
 }
